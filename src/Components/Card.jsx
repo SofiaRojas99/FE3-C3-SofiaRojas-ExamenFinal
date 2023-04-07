@@ -9,20 +9,19 @@ const Card = ({ dentist }) => {
 
   const addFavorite = () =>{
     if(!state.favorites.find(fav => fav.id === id)){
-      dispatch({type: "addFavs", payload: dentist})
+      dispatch({type: "ADD_FAVS", payload: dentist})
       alert(`Se ha agregado el dentista ${name} a favoritos.`)
     } else{
-      dispatch({type: "deteleFavs", payload: dentist})
+      dispatch({type: "DELETE_FAVS", payload: dentist})
       alert(`Se ha eliminado el dentista ${name} de favoritos.`)
     }
   }
 
   return (
     <div className="card">
-
         <Link to={"/dentist/" + id}>
           <img src="./images/doctor.jpg" alt="IMG-Doctor" />
-          <h3>{name}</h3>
+          <h4>{name}</h4>
           <p>{username}</p>
         </Link>
         <button onClick={addFavorite} className="fav-button">⭐</button>

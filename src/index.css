@@ -243,8 +243,10 @@ form button:hover{
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
-  width: 80vw;
+
+  width: 65vw;
   height: auto;
+
   flex-wrap: wrap;
   margin: 0 auto;
 }

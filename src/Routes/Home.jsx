@@ -5,7 +5,7 @@ import { useGlobalContext } from '../Components/utils/global.context'
 
 const Home = () => {
   const {state} = useGlobalContext()
-  const dentists = state.data
+  const dentists = state.dentists
 
   return (
     <main className={"main " + (state.thema)} >

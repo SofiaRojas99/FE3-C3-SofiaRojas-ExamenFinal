@@ -1,31 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGlobalContext } from '../Components/utils/global.context'
 
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Detail = () => {
-  const {state} = useGlobalContext()
-  const [dentistSel, setDentistSel] = useState({}) 
+  const {state, getDentist} = useGlobalContext()
   const params = useParams()
-
-  const url = `https://jsonplaceholder.typicode.com/users/${params.id}`
   
   useEffect(() => {
-    const fetchData = async () => {
-      let response = await fetch(url)
-      let data = await response.json()
-      setDentistSel(data)
-    } 
-    fetchData()
-  }, [])
+    getDentist(params.id)
+  }, [params.id])
  
 
   return (
     <div className={"detail "+(state.thema)}>
      <h1>Detail Dentist id </h1>
-    {dentistSel
+    {state.dentist
       ? 
           <table border="1" className="line_title" >
           <thead>
@@ -39,11 +29,11 @@ const Detail = () => {
           </thead>
           <tbody>
             <tr>
-              <td>{dentistSel?.name}</td>
-              <td>{dentistSel?.username}</td>
-              <td>{dentistSel?.email}</td>
-              <td>{dentistSel?.phone}</td>
-              <td>{dentistSel?.website}</td>
+              <td>{state.dentist?.name}</td>
+              <td>{state.dentist?.username}</td>
+              <td>{state.dentist?.email}</td>
+              <td>{state.dentist?.phone}</td>
+              <td>{state.dentist?.website}</td>
             </tr>
           </tbody>
           </table>

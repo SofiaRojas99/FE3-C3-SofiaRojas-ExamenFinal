@@ -5,18 +5,21 @@ const favorites = localStorage.getItem('favorites')
 const thema = localStorage.getItem('thema')
 
 const initialState = {
-  data: [],
+  dentists: [],
+  dentist: {},
   favorites: JSON.parse(favorites) || [],
   thema: thema || "light"
 }
 
 const reducer = (state, action) => {
   switch (action.type){
-      case 'data':
-        return  {...state, data: action.payload}
-      case 'addFavs':
+      case 'GET_DENTISTS':
+        return  {...state, dentists: action.payload}
+      case 'GET_DENTIST':
+        return {...state, dentist: action.payload}
+      case 'ADD_FAVS':
         return {...state, favorites: [...state.favorites, action.payload]}
-      case 'deteleFavs':
+      case 'DELETE_FAVS':
         return {...state, favorites: [...state.favorites.filter((favorite) => favorite !== action.payload),]}
       case 'light':
         return {...state, thema: action.payload}
@@ -36,9 +39,24 @@ const ContextProvider = ({ children }) => {
       let res = await fetch(url)
       if(res.ok){
         let data = await res.json()
-        dispatch({type: 'data', payload: data})
+        dispatch({type: 'GET_DENTISTS', payload: data})
       }else{
         console.log(res);
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const getDentist = async(id) =>{
+    let url = 'https://jsonplaceholder.typicode.com/users/' + id
+    try {
+      let response = await fetch(url)
+      if(response.ok){
+        let data = await response.json()
+        dispatch({type: 'GET_DENTIST', payload: data})
+      }else{
+        console.log(response);
       }
     } catch (error) {
       console.log(error)
@@ -58,7 +76,7 @@ const ContextProvider = ({ children }) => {
   }, [state.thema]);
 
   return (
-    <GlobalContext.Provider value={{state, dispatch}}>
+    <GlobalContext.Provider value={{state, dispatch, getDentist}}>
       {children}
     </GlobalContext.Provider>
   );
