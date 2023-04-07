@@ -144,10 +144,10 @@ footer {
 
 .dh-logo {
   width: 290px;
+  justify-content:center;
 }
 
 .dh-logo img{
-  width: 200px;
   margin: 0;
 }
 .dh-logo p{
@@ -305,13 +305,7 @@ tr:nth-child(even) {
 }
 
 .dark .dh-logo img{
-  width: auto;
-  margin: 0;
-  padding-left: 15px;
-}
-
-.dark .dh-logo{
-  justify-content:center;
+  padding-left: 10px;
 }
 
 .fav-button:hover{

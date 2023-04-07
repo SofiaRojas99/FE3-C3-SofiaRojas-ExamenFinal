@@ -13,8 +13,8 @@ const Footer = () => {
         <div className = "dh-logo">
           <p>Powered by</p>
           {state.thema === "light"
-          ? <img src="./images/DH.png" alt='DH-logo' />
-          : <img src="./DH.ico" alt='DH-logo' />
+          ? <img src="./images/DH.png" alt='DH-logo1' />
+          : <img src="./DH.ico" alt='DH-logo2' />
           }
         </div>
         <div className = "social-media">
