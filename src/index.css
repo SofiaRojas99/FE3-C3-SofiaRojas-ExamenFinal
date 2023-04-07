@@ -1,0 +1,333 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+h1{
+  text-align: center;
+  margin: 0;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+h2 {
+  margin: 0;
+  padding-top: 2em;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: medium;
+}
+
+span {
+  font-size: x-large;
+}
+
+span::first-letter {
+  color: red
+}
+
+main, .contact, .favs, .detail{
+  margin: auto;
+  padding-top: 40px;
+
+  padding-bottom: 2em;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: rgb(214, 214, 214);
+
+  height: 40px;
+  width: 100%;
+  padding: 1rem;
+  
+  position:fixed;
+  top:0;
+  z-index: 100px;
+
+}
+
+nav div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  
+}
+
+nav img{
+  height: 100%;
+}
+
+.btn-theme{
+  height: 40px;
+  width: 40px;
+  border: none;
+  align-items: center;
+
+  cursor: pointer;
+  border-radius: 5px;
+
+  background-color: black;
+}
+
+.btn-theme:hover{
+  box-shadow: 0 4px 16px rgb(53, 55, 56);
+  transition: all 0.2s ease;
+}
+
+a{
+  color: #000;
+  text-decoration: none;
+  margin: 5px;
+
+  cursor: pointer;
+}
+
+a:hover{
+  color: rgb(136, 136, 136);
+} 
+
+footer {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  bottom: 0;
+}
+
+.go-back{
+  background-color: red;
+  border: none;
+  height: 30px;
+
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.info-footer{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+
+  height: 40px;
+  padding: 1rem;
+
+  position: relative;
+  bottom: 0;
+} 
+
+.dh-logo, .social-media{
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-media {
+  width: 200px;
+}
+
+.dh-logo {
+  width: 290px;
+}
+
+.dh-logo img{
+  width: 200px;
+  margin: 0;
+}
+.dh-logo p{
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
+.logos{
+  filter: invert(1);
+  height: auto;
+  width: auto;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  width: 300px;
+  height: 100px;
+
+  margin: 0 auto;
+}
+
+form button{
+  padding: 0.5em;
+  border: none;
+  width: 100%;
+
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+
+  background: #eeeeee;
+  border: 2px solid;
+  border-color: #eeeeee;
+  font-weight: bold;
+}
+
+form button:hover{
+  box-shadow: 0 4px 16px rgb(53, 55, 56);
+  transition: all 0.2s ease;
+}
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: 200px;
+  height: 390px;
+
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border: 0.5px solid rgb(136, 136, 136);
+}
+.card img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card:hover{
+    border: 0.5px solid rgb(206, 217, 142);
+}
+
+.fav-button{
+  padding: 0.5em 1.2em;
+  border: none;
+
+  height: 40px;
+  width: 100%;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eeeeee;
+  border: 2px solid;
+  border-color: #eeeeee;
+
+}
+
+.fav-button:hover{
+  box-shadow: 0 4px 16px rgb(53, 55, 56);
+  transition: all 0.2s ease;
+}
+
+.card-grid{
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 80vw;
+  height: auto;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.dark{
+  background-color: #292929;
+  color: white;
+}
+
+.dark a {
+  color: white;
+}
+
+.dark.main, .dark.contact, .dark.favs, .dark.detail {
+  background-color: #292929e0;
+}
+
+
+.dark .btn-theme{
+  background-color: #ffffff;
+
+}
+
+.dark .btn-theme:hover{
+  box-shadow:  0 4px 16px rgb(131, 133, 134);
+}
+
+.dark .logos{
+  filter: invert(0);
+  height: auto;
+  width: auto;
+}
+
+.dark .fav-button{
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.dark .dh-logo img{
+  width: auto;
+  margin: 0;
+  padding-left: 15px;
+}
+
+.dark .dh-logo{
+  justify-content:center;
+}
+
+.fav-button:hover{
+  box-shadow: 0 4px 16px rgb(131, 133, 134);
+  transition: all 0.2s ease;
+}
+
+.error{
+  color: red;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.message{
+  font-weight: bold;
+  font-size: large;
+  margin: 0;
+  padding-top: 10px;
+
+}
