@@ -10,10 +10,10 @@ const Card = ({ dentist }) => {
   const addFavorite = () =>{
     if(!state.favorites.find(fav => fav.id === id)){
       dispatch({type: "ADD_FAVS", payload: dentist})
-      alert(`Se ha agregado el dentista ${name} a favoritos.`)
+      alert(`The dentist ${name} has been added to favorites.`)
     } else{
       dispatch({type: "DELETE_FAVS", payload: dentist})
-      alert(`Se ha eliminado el dentista ${name} de favoritos.`)
+      alert(`The dentist ${name} has been removed from favorites.`)
     }
   }
 

@@ -1,11 +1,11 @@
 
 import { Route, Routes } from "react-router-dom";
-import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
 import Detail from "./Routes/Detail";
 import Favs from "./Routes/Favs";
+import Footer from "./Components/Footer";
 
 
 function App() {

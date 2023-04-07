@@ -12,20 +12,16 @@ const Favs = () => {
       <h1>Dentists Favs</h1>
       <div className="card-grid">
 
-        {favorites
+        {favorites.length > 0
         ? 
-          favorites.length > 0 
-          ?
             favorites.map((d) => {
               return(
                 <div key={d.id}>
                   <Card dentist ={d} />
                 </div>
               )
-            }) 
-          : "Not favorites yet..."
-          
-        : "Not favorites yet..."}
+            })  
+        : "No favorites yet..."}
       </div>
     </div>
   );

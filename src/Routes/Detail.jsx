@@ -5,6 +5,7 @@ import { useGlobalContext } from '../Components/utils/global.context'
 
 const Detail = () => {
   const {state, getDentist} = useGlobalContext()
+  const dentist = state.dentist
   const params = useParams()
   
   useEffect(() => {
@@ -15,7 +16,7 @@ const Detail = () => {
   return (
     <div className={"detail "+(state.thema)}>
      <h1>Detail Dentist id </h1>
-    {state.dentist
+    {dentist
       ? 
           <table border="1" className="line_title" >
           <thead>
@@ -29,11 +30,11 @@ const Detail = () => {
           </thead>
           <tbody>
             <tr>
-              <td>{state.dentist?.name}</td>
-              <td>{state.dentist?.username}</td>
-              <td>{state.dentist?.email}</td>
-              <td>{state.dentist?.phone}</td>
-              <td>{state.dentist?.website}</td>
+              <td>{dentist?.name}</td>
+              <td>{dentist?.username}</td>
+              <td>{dentist?.email}</td>
+              <td>{dentist?.phone}</td>
+              <td>{dentist?.website}</td>
             </tr>
           </tbody>
           </table>

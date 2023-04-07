@@ -21,9 +21,9 @@ const Navbar = () => {
         <Link to='/favs'><h3>Favorites</h3></Link>
 
         <button onClick={changeThema} className= "btn-theme">
-        {state.thema === "dark"
-          ? "🔅"
-          : "🌙"
+        {state.thema === "light"
+          ? "🌙"
+          : "🔅"
         }</button>
 
       </div>
